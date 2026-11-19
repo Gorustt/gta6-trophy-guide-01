@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice City Platinum Tracker — GTA VI Trophy Guide</title>
+<meta name="description" content="Offline guide and tracker for all 55 official GTA VI PlayStation 5 trophies: walkthroughs, roadmap, missable flags and cited sources. Zero network.">
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+<div id="vice-shell">
+  <noscript><p style="padding:12px;border:1px solid #fb7185;border-radius:8px">This tracker needs JavaScript: it loads its 55 trophies from app/data/trophies.json and saves your progress in the browser.</p></noscript>
+  <header id="completion-hud" aria-live="polite"></header>
+
+  <nav id="workspace-nav" aria-label="Guide views"></nav>
+
+  <div id="command-controls">
+    <input id="query-box" type="search" placeholder="Search" autocomplete="off" aria-label="Search trophies">
+    <div id="category-pills" role="group" aria-label="Category filter"></div>
+    <select id="tier-select" aria-label="Tier filter">
+      <option value="all">All tiers</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select>
+    <label><input id="spoiler-shield" type="checkbox"> Hide spoilers</label>
+    <label><input id="unlocked-filter" type="checkbox"> Unlocked only</label>
+    <span class="spacer"></span>
+    <button id="btn-export" type="button">Export</button>
+    <button id="btn-import" type="button">Import</button>
+    <button id="btn-reset" type="button">Reset</button>
+  </div>
+
+  <main>
+    <div id="catalog-view">
+      <section id="trophy-catalog" class="panel" aria-label="Trophy catalog"></section>
+      <aside id="guide-inspector" class="panel" aria-label="Guide inspector"></aside>
+    </div>
+    <section id="blueprint-panel" class="panel hidden" aria-label="Platinum blueprint"></section>
+    <section id="missable-panel" class="panel hidden" aria-label="Missable alert and saves"></section>
+    <section id="reference-panel" class="panel hidden" aria-label="Reference index"></section>
+  </main>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
