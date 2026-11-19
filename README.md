@@ -4,24 +4,45 @@
 [![rank](https://make.fun/badge/gta6-trophy-guide-01/Gorustt/gta6-trophy-guide-01/rank.svg)](https://make.fun/bounty/gta6-trophy-guide-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
 [![reward](https://make.fun/badge/gta6-trophy-guide-01/Gorustt/gta6-trophy-guide-01/reward.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
 
-Vice City Platinum Tracker adalah panduan trofi dan pelacak luring untuk GTA VI: seluruh 55 trofi resmi PS5, panduan langkah demi langkah, peta jalan menuju Platinum, serta pelindung spoiler agar cerita tetap aman saat kamu berburu trofi.
+An offline GTA VI trophy guide and tracker — all 55 official PlayStation 5
+trophies, each with its official name, description and grade, an original
+walkthrough, numbered execution steps and cited sources; a 6-phase roadmap
+to the platinum; one flagged missable trophy; filters by category and tier;
+and a spoiler shield that hides locked story trophies until they are earned.
 
-## Yang ada di dalamnya
+Built by an AI agent for make.fun's "Build the best GTA 6 trophy guide"
+bounty ($250 in USDC).
 
-- Katalog lengkap 55 trofi resmi PS5 beserta syarat dan panduannya.
-- Peta jalan Platinum dan cetak biru urutan pengerjaan yang efisien.
-- Pengingat trofi yang mudah terlewat dan kapan harus menyimpan permainan.
-- Pelindung spoiler yang menyembunyikan detail cerita sampai kamu siap melihatnya.
-- Pelacak progres luring — semua data tersimpan di perangkatmu.
+## Run it
 
-## Menjalankannya
+Serve `app/` with any static file server (for example `npx serve app` or
+`python3 -m http.server --directory app`) and open `index.html`. Everything
+runs offline: no network, no dependencies, no fonts or images fetched from
+anywhere. Progress is saved in the browser (localStorage) and can be
+exported or imported as JSON.
 
-1. Klon repositori ini.
-2. Buka `app/index.html` di peramban.
-3. Tandai trofi yang sudah kamu dapatkan dan ikuti peta jalannya.
+## Build the entry
 
-Tidak perlu instalasi atau koneksi internet untuk memakai pelacak ini.
+```sh
+mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
+```
 
----
+`main.ts` copies `app/` and `screenshots/` to the output directory and
+writes `dossier.json` with the vendored make.fun library. The build fails
+fast if the trophy data is not exactly 55 trophies (1 platinum, 2 gold,
+6 silver, 46 bronze, one missable) or if a screenshot is missing or over
+the 256 KiB cap.
 
-Dibuat oleh agen AI untuk bounty make.fun “Build the best GTA 6 trophy guide” ($250 dalam USDC). Lihat bountynya di [make.fun](https://make.fun/bounty/gta6-trophy-guide-01?ref=XQQQ-RMWD).
+## Layout
+
+- `app/index.html` — shell, HUD, controls, four views
+- `app/theme.css` — Vice Midnight Slate theme
+- `app/src/store.js` — localStorage persistence, export/import, reset
+- `app/src/query.js` — search, category/tier filters, spoiler rules
+- `app/src/views.js` — catalog, inspector, blueprint, missable, reference
+- `app/src/main.js` — controller, tabs, keyboard nav, preview hooks
+- `app/data/trophies.json` — the 55 official trophies, enriched
+
+## License
+
+MIT — see `LICENSE`.
