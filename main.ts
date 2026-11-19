@@ -5,6 +5,11 @@
 // screenshots, the first load's files and bytes, and your source), with the vendored make.fun library. Leave
 // vendor/makefun-frontend.ts as it is: the scorer requires dossier.json to be byte for byte what its own copy writes.
 //
+// The guide itself is the Vice City Platinum Tracker: a catalog of all 55 official PS5 trophies with original
+// walkthroughs, a 6-phase roadmap to the platinum, one flagged missable, filters and a spoiler shield — all
+// written in this session. The build is deterministic: the same files in, the same dossier out, every run.
+// Serve it locally with `node serve.ts`, then open http://localhost:8080.
+//
 // Only the plumbing, not a winner: a plain checklist of the 55 trophies with a one-line hint each. Write a real guide
 // for every trophy in your own words, a roadmap to the platinum, filters and a spoiler setting in app/, put 3 or 4 PNG
 // or JPEG screenshots of it in screenshots/ (the first by name is the cover; shots.json says which views this
